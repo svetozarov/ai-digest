@@ -6,7 +6,7 @@
   <title>AI-Digest · 2026-04-19</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Playfair+Display:wght@900&family=Source+Serif+4:ital,wght@0,400;0,600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Inter:wght@400;500&display=swap">
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -16,19 +16,18 @@
     }
 
     :root {
-      --bg:     #f6f3ec;
-      --text:   #14141a;
-      --muted:  #6a6a72;
-      --accent: #a8342a;
-      --rule:   #14141a;
-      --max-w:  720px;
-      --px:     20px;
+      --bg:    #efece4;
+      --text:  #111;
+      --muted: #6e6a64;
+      --rule:  #111;
+      --max-w: 720px;
+      --px:    20px;
     }
 
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'Source Serif 4', Georgia, serif;
+      font-family: 'Inter', system-ui, sans-serif;
       font-size: 18px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -42,28 +41,39 @@
 
     /* ── HERO ── */
     .hero {
-      padding-top: 72px;
+      padding-top: 56px;
       padding-bottom: 0;
     }
 
     .hero-kicker {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 11px;
-      letter-spacing: 0.15em;
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 24px;
+      color: var(--muted);
+      margin-bottom: 32px;
     }
 
-    .hero-date {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 900;
-      font-size: clamp(56px, 10vw, 120px);
-      line-height: 0.95;
-      letter-spacing: -0.02em;
+    .hero-date-number {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 800;
+      font-size: clamp(64px, 14vw, 160px);
+      letter-spacing: -0.03em;
+      line-height: 0.9;
       color: var(--text);
-      margin-bottom: 40px;
+      display: block;
+    }
+
+    .hero-date-month {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 800;
+      font-size: clamp(32px, 5vw, 56px);
+      letter-spacing: -0.02em;
+      line-height: 1.0;
+      color: var(--text);
+      display: block;
+      margin-bottom: 28px;
     }
 
     .hero-rule {
@@ -72,13 +82,14 @@
     }
 
     .hero-meta {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 500;
       font-size: 12px;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--muted);
-      padding-top: 12px;
+      padding-top: 14px;
+      margin-bottom: 0;
     }
 
     /* ── LEDE ── */
@@ -88,10 +99,10 @@
     }
 
     .today-lede p {
-      font-family: 'Source Serif 4', Georgia, serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 400;
-      font-size: 22px;
-      line-height: 1.55;
+      font-size: clamp(22px, 3vw, 28px);
+      line-height: 1.35;
       color: var(--text);
     }
 
@@ -100,54 +111,61 @@
       padding-bottom: 96px;
     }
 
+    .card-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin-bottom: 28px;
+    }
+
     .card {
-      padding-bottom: 88px;
+      padding-bottom: 80px;
     }
 
     .card-kicker {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 11px;
-      letter-spacing: 0.15em;
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--muted);
       margin-bottom: 20px;
     }
 
     .card-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 900;
-      font-size: clamp(34px, 5.5vw, 56px);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 800;
+      font-size: clamp(38px, 6.5vw, 68px);
+      line-height: 1.0;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
       color: var(--text);
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .card-lede {
-      font-family: 'Source Serif 4', Georgia, serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 400;
-      font-size: 19px;
-      line-height: 1.55;
+      font-size: clamp(22px, 3vw, 28px);
+      line-height: 1.35;
       color: var(--text);
       margin-bottom: 24px;
     }
 
     .card-body {
-      font-family: 'Source Serif 4', Georgia, serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 400;
       font-size: 18px;
-      line-height: 1.65;
+      line-height: 1.6;
       color: var(--text);
       margin-bottom: 20px;
     }
 
     .card-why {
-      border-left: 2px solid var(--rule);
-      padding-left: 24px;
+      border-left: 3px solid var(--rule);
+      padding-left: 28px;
       margin: 28px 0;
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
       font-size: 18px;
       line-height: 1.6;
       color: var(--text);
@@ -155,10 +173,10 @@
 
     .card-source {
       display: inline-block;
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 500;
       font-size: 11px;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--muted);
       text-decoration: none;
@@ -166,12 +184,6 @@
 
     .card-source:hover {
       color: var(--text);
-    }
-
-    .card-divider {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin-bottom: 88px;
     }
 
     /* ── FOOTER ── */
@@ -182,21 +194,23 @@
     }
 
     .footer-meta {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 500;
       font-size: 11px;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--muted);
+      text-align: center;
       margin-bottom: 32px;
     }
 
     .footer-colophon {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 900;
-      font-size: 48px;
-      line-height: 1.0;
-      letter-spacing: -0.02em;
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 800;
+      font-size: clamp(56px, 11vw, 100px);
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
       color: var(--text);
       text-align: center;
     }
@@ -208,15 +222,19 @@
       }
 
       .hero {
-        padding-top: 120px;
+        padding-top: 80px;
       }
 
-      .today-lede p {
-        font-size: 26px;
+      .hero-kicker {
+        font-size: 13px;
       }
 
-      .card-lede {
-        font-size: 22px;
+      .hero-meta {
+        font-size: 13px;
+      }
+
+      .card-kicker {
+        font-size: 13px;
       }
 
       .card-body {
@@ -224,11 +242,7 @@
       }
 
       .card-why {
-        font-size: 19px;
-      }
-
-      .footer-colophon {
-        font-size: 72px;
+        font-size: 20px;
       }
     }
   </style>
@@ -239,60 +253,63 @@
 
   <!-- HERO -->
   <header class="hero">
-    <p class="hero-kicker">AI-Digest &middot; Выпуск №109</p>
-    <h1 class="hero-date">19 апреля 2026</h1>
+    <p class="hero-kicker">AI-Digest · Выпуск 109 · 19.04.26</p>
+    <span class="hero-date-number">19</span>
+    <span class="hero-date-month">Апреля</span>
     <hr class="hero-rule">
-    <p class="hero-meta">Четверг &middot; 3 материала</p>
+    <p class="hero-meta">Четверг · 3 материала</p>
   </header>
 
   <!-- TODAY'S LEDE -->
   <section class="today-lede">
-    <p>Anthropic переписала внутренний промпт Claude Opus 4.7 — теперь он сначала берёт инструмент, а потом спрашивает. Компании, которые запустили агентов в продакшн, начали считать потери — токены, время и нервы. Google ведёт переговоры с Marvell о собственном AI-чипе, продолжая гонку за compute-суверенитет.</p>
+    <p>Anthropic переписала операционную логику Opus 4.7 — агент теперь сам тянется к инструментам вместо встречных вопросов. Silicon Valley считает реальную стоимость агентных систем и обнаруживает хаос там, где обещали автоматизацию. Google торгуется с Marvell за собственный AI-чип — гонка вертикальной интеграции набирает обороты.</p>
   </section>
 
   <!-- CARDS -->
   <main class="cards">
 
+    <!-- CARD 1 -->
+    <hr class="card-rule">
     <article class="card" id="card-1">
-      <p class="card-kicker">01 &middot; Модели</p>
-      <h2 class="card-title">Opus 4.7 меняет логику: сначала действие, потом уточнение</h2>
-      <p class="card-lede">Anthropic обновила системный промпт Claude Opus 4.7 — и разбор от Simon Willison показывает, что это не косметика: модель получила новую операционную установку.</p>
-      <p class="card-body">Главный сдвиг — приоритет tool use над переспрашиванием. Там, где Opus 4.6 мог задать встречный вопрос, 4.7 теперь предпочитает попробовать доступный инструмент. Параллельно расширился список встроенных возможностей: Claude in Chrome, Claude in Excel, Claude in PowerPoint — браузер и офисный пакет теперь часть рабочего стека по умолчанию. Ответы стали короче, задачи доводятся до результата без промежуточных уточнений.</p>
-      <p class="card-body">Для продакшн-агентов это означает пересмотр guardrails: инструкции, написанные под пассивное поведение 4.6, могут работать иначе. Модель, которая сама закрывает двусмысленности через tool use, требует более аккуратных tool contracts и чётких границ допустимых действий.</p>
-      <blockquote class="card-why">Если вы строите агентный пайплайн или ведёте чат-ассистента на Claude — проверьте поведение на тех сценариях, где раньше модель останавливалась и спрашивала. Теперь она попытается действовать сама. Это ускоряет рабочий процесс, но требует явных ограничений там, где автономность нежелательна.</blockquote>
-      <a class="card-source" href="https://simonwillison.net/2026/Apr/18/opus-system-prompt/" target="_blank" rel="noopener">Источник &rarr; Simon Willison</a>
+      <p class="card-kicker">01 · Модели</p>
+      <h2 class="card-title">Opus 4.7 уходит в tool-first режим</h2>
+      <p class="card-lede">Anthropic опубликовала changelog системного промпта Claude Opus 4.7 — Simon Willison разобрал изменения: модель стала агрессивнее использовать инструменты и заметно реже задавать уточняющие вопросы.</p>
+      <p class="card-body">В новом системном промпте зафиксированы три ключевых сдвига: приоритет tool use над переспрашиванием пользователя, появление встроенных возможностей Claude in Chrome, Claude in Excel и Claude in PowerPoint, а также усиленные инструкции по краткости и самостоятельному завершению задач. Параллельно ужесточена работа с чувствительными темами.</p>
+      <p class="card-body">Это не «очередной prompt leak» — это изменение операционной логики ассистента. Для продакшн-агентов сигнал прямой: Claude 4.7 будет охотнее закрывать двусмысленности через tool use и лучше вести длинные рабочие цепочки. Но это же означает, что guardrails под пассивный 4.6 нужно пересматривать.</p>
+      <blockquote class="card-why">Если собираете агентный пайплайн — теперь Claude сам потянется к браузеру, таблицам и слайдам. Слой orchestration становится менее директивным; зато возрастает ценность чётких tool contracts и явных ограничений на scope.</blockquote>
+      <a class="card-source" href="https://simonwillison.net/2026/Apr/18/opus-system-prompt/" target="_blank" rel="noopener">Источник → Simon Willison, 18.04</a>
     </article>
 
-    <hr class="card-divider">
-
+    <!-- CARD 2 -->
+    <hr class="card-rule">
     <article class="card" id="card-2">
-      <p class="card-kicker">02 &middot; Инструменты</p>
-      <h2 class="card-title">Агенты в продакшне: настоящая цена хаоса</h2>
-      <p class="card-lede">CNBC зафиксировал следующую волну AI-разочарования: компании, которые перешли от демо к эксплуатации, начали считать реальную стоимость агентных систем.</p>
-      <p class="card-body">Жалобы однотипные: избыточные tool calls, лавинообразный расход токенов, трудно отлаживаемые многошаговые сценарии, непредсказуемость при параллельных цепочках. Рынок переходит из стадии «у нас есть агент» в стадию «наш агент управляем». Конкурентное преимущество смещается к тем, кто умеет измерять latency, бюджетировать токены, строить observability и проектировать graceful degradation.</p>
-      <p class="card-body">Это не анти-AI материал — это взросление рынка. Ценность создаётся не самой моделью, а качеством orchestration: memory, retries, tool contracts, логирование и мониторинг. Особенно критично для небольших продуктов, у которых нет резерва на дорогой хаос в продакшне.</p>
-      <blockquote class="card-why">Если вы собираете AI-инструмент для архитектурных воркфлоу — главный риск уже не в «умности модели», а в стоимости и надёжности агентной связки. Бриф, нормативы, концепт-пакет, презентация — каждый шаг нужно бюджетировать и делать откатываемым. Это engineering-задача, не prompt-задача.</blockquote>
-      <a class="card-source" href="https://www.cnbc.com/" target="_blank" rel="noopener">Источник &rarr; CNBC</a>
+      <p class="card-kicker">02 · Инструменты</p>
+      <h2 class="card-title">Агентный хаос: реальная цена автоматизации</h2>
+      <p class="card-lede">CNBC фиксирует системные издержки массового внедрения AI-агентов: перерасход токенов, непредсказуемые многошаговые цепочки и сложность отладки параллельных процессов.</p>
+      <p class="card-body">На фоне повсеместного хайпа вокруг агентов компании переходят от демо к реальной эксплуатации — и начинают считать: стоимость владения, latency, observability, failure modes. Результат предсказуемый: обещанная автоматизация требует серьёзной инфраструктуры под собой.</p>
+      <p class="card-body">Рынок разворачивается: конкурентное преимущество смещается с «у нас есть агент» к «наш агент измерим, ограничен по стоимости и безопасно деградирует». Иными словами, ценность теперь создаёт не модель сама по себе, а качество orchestration, memory, retries и мониторинга.</p>
+      <blockquote class="card-why">Для любого прикладного AI-продукта это не абстракция — это checklist. Если агент помогает собирать бриф или анализировать участок, главный риск уже не в «умности модели», а в стоимости и надёжности агентной связки на каждом шаге.</blockquote>
+      <a class="card-source" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOZ2Y2WlhoQU9jRURWalo2cWFFQWs3NXUyM1ZWVElsNGN1aGpHU21IeUMxdnZZYXdIV20wN3NGelNYOGg2T3hNMzYyZ2Q4Y3g2R2F0Qy1kSDZtaDNuYzFncnk0d21OWVl4MnJQcGozNWNJamNVaE1MR0lhaUJvSFFSTk5RQV9SAYoBQVVfeXFMTXBPN0dlVm1zTlZnT0VrWWNMVTNyc1RjRW9nTVJicjJiczQzRllMc1h5Z1B5cDA0czhkSjAweklxZnFZN1QwSkFhWUpGcDFHNlRNZzg0UFFNeG9sRzJIaWltVE1GWUN3SlBxenVGeWNuV3NKTEMwWkYzekV0Y1ptNHViYjU5OUJtMGpR?oc=5" target="_blank" rel="noopener">Источник → CNBC, 19.04</a>
     </article>
 
-    <hr class="card-divider">
-
+    <!-- CARD 3 -->
+    <hr class="card-rule">
     <article class="card" id="card-3">
-      <p class="card-kicker">03 &middot; Индустрия</p>
-      <h2 class="card-title">Google и Marvell проектируют следующий AI-чип</h2>
-      <p class="card-lede">Reuters сообщает, что Google ведёт переговоры с Marvell о разработке нового AI-ускорителя. Официального анонса нет, но сам факт переговоров говорит о продолжении стратегии вертикальной интеграции compute.</p>
-      <p class="card-body">Крупные платформы последовательно уходят от универсальных GPU к кастомным ускорителям — Google TPU, Apple Silicon, AWS Trainium, теперь возможно новый чип с Marvell. Для рынка это означает дальнейшую фрагментацию AI-инфраструктуры: inference и training становятся всё более привязаны к конкретной платформе. Барьеры входа для тех, кто не контролирует silicon и software stack одновременно, растут.</p>
-      <p class="card-body">Для прикладных продуктов последствие практическое: цена API, доступность квот и скорость появления новых capability tiers всё сильнее зависят от того, на каком облаке вы строитесь и какую модельную линейку используете.</p>
-      <blockquote class="card-why">Выбор облачной платформы для AI-инструмента — это уже не только вопрос удобства API. Это ставка на compute-экосистему со своей ценовой политикой, приоритетами и road map. Чем раньше вы сделаете этот выбор осознанно, тем меньше будет дорогих сюрпризов при масштабировании.</blockquote>
-      <a class="card-source" href="https://www.reuters.com/" target="_blank" rel="noopener">Источник &rarr; Reuters</a>
+      <p class="card-kicker">03 · Индустрия</p>
+      <h2 class="card-title">Google и Marvell: ставка на свой чип</h2>
+      <p class="card-lede">Reuters сообщает о переговорах Google с Marvell по созданию нового AI-чипа — очередной шаг в стратегии платформ строить собственный compute-стек вместо зависимости от универсальных GPU.</p>
+      <p class="card-body">Даже без официального анонса сам факт переговоров говорит о продолжении гонки вертикальной интеграции. Крупные платформы последовательно уходят от универсальных GPU к кастомным accelerators — это даёт преимущество по цене и доступности inference, но одновременно создаёт фрагментацию AI-инфраструктуры.</p>
+      <p class="card-body">Для прикладных продуктов последствия конкретные: качество, цена и latency AI-сервисов будут сильнее расходиться между облаками. Выбор платформы для API-доступа к моделям перестаёт быть технической мелочью — это стратегическое решение с долгосрочными последствиями для экономики продукта.</p>
+      <blockquote class="card-why">Архитектуру AI-продукта теперь нужно закладывать с оглядкой на compute politics: от того, на чьём облаке работает ваш инструмент, зависит себестоимость генерации, стабильность квот и появление новых capability tiers.</blockquote>
+      <a class="card-source" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxOdWxnVXdLUWNJdk5fa1hpOVJUM2Rya25tcGYyUjE1NWN3T3VCcWU2M09jdmpqOUl1OUkyaXdna0ZIRnFSZm1NazdpQkkxSXVvN2ExSXVoQ3ZMenREUzRxMkNuWXRpR3hTek01Q3FYTFY2MUI1OWJpTi1YeDZIUHh1Xy1jZzZ0RW9xMzZudzZNS2EtSFEydWVoaVhzelVWc3hYNXRXRUdzNnhGWFpUMHVNZ1JJRm04MXpPNldj?oc=5" target="_blank" rel="noopener">Источник → Reuters, 19.04</a>
     </article>
 
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <p class="footer-meta">AI-Digest &middot; Сгенерировано Opus 4.7 &middot; OpenClaw Pipeline &middot; 2026-04-19</p>
-    <p class="footer-colophon">AI&#8209;Digest</p>
+    <p class="footer-meta">AI-Digest · Claude Opus 4.7 × OpenClaw · 2026</p>
+    <p class="footer-colophon">AI&#x2014;Digest</p>
   </footer>
 
 </div>
