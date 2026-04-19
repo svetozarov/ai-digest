@@ -1,0 +1,76 @@
+name: Deploy to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build site
+        run: |
+          mkdir -p _site
+          cp *.html _site/ 2>/dev/null || true
+
+          python3 - << 'PY'
+          import os, re
+          files = sorted([f for f in os.listdir('_site') if re.match(r'^\d{4}-\d{2}-\d{2}\.html$', f)], reverse=True)
+          items = '\n'.join([f'<li><a href="{f}">{f.replace(".html","")}</a></li>' for f in files])
+          html = f'''<!doctype html>
+          <html lang="ru">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <title>AI-Digest — архив</title>
+            <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Noto+Serif:wght@400&display=swap" rel="stylesheet">
+            <style>
+              html,body{{margin:0;padding:0;background:#fafaf8;color:#14141a;font-family:'Noto Serif',Georgia,serif;font-size:18px;line-height:1.6}}
+              .wrap{{max-width:680px;margin:0 auto;padding:48px 20px}}
+              h1{{font-family:'Manrope',sans-serif;font-weight:800;font-size:48px;letter-spacing:-.02em;margin:0 0 8px}}
+              .sub{{color:#6a6a72;font-size:14px;margin-bottom:48px}}
+              ul{{list-style:none;padding:0;margin:0}}
+              li{{padding:16px 0;border-bottom:1px solid #e5e5df}}
+              a{{color:#14141a;text-decoration:none;font-family:'Manrope',sans-serif;font-weight:700}}
+              a:hover{{text-decoration:underline}}
+              @media(min-width:768px){{h1{{font-size:72px}}.wrap{{padding:80px 32px}}}}
+            </style>
+          </head>
+          <body>
+            <div class="wrap">
+              <h1>AI-DIGEST</h1>
+              <div class="sub">архив ежедневных выпусков</div>
+              <ul>{items}</ul>
+            </div>
+          </body>
+          </html>'''
+          with open('_site/index.html','w',encoding='utf-8') as f:
+              f.write(html)
+          PY
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

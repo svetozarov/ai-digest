@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI-Digest · 2026-04-19</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Serif:wght@400;600&display=swap">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-style: normal !important;
+    }
+
+    :root {
+      --bg:        #fafaf8;
+      --text:      #14141a;
+      --muted:     #6a6a72;
+      --rule:      #c8c8c0;
+      --bq-border: #14141a;
+      --max-w:     680px;
+      --px:        20px;
+      --gap-card:  72px;
+      --gap-inner: 20px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Serif', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--px);
+    }
+
+    .site-header { padding: 48px 0 40px; }
+
+    .site-label {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .site-date {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 56px;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .header-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin-top: 40px;
+    }
+
+    .cards {
+      padding-top: var(--gap-card);
+      padding-bottom: var(--gap-card);
+    }
+
+    .card { margin-bottom: var(--gap-card); }
+    .card:last-child { margin-bottom: 0; }
+
+    .card-tag {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: var(--gap-inner);
+    }
+
+    .card-title {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: var(--gap-inner);
+    }
+
+    .card-lede {
+      font-family: 'Noto Serif', Georgia, serif;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.55;
+      color: var(--text);
+      margin-bottom: var(--gap-inner);
+    }
+
+    .card-body {
+      font-family: 'Noto Serif', Georgia, serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--text);
+      margin-bottom: var(--gap-inner);
+    }
+
+    .card-body + .card-body {
+      margin-top: calc(-1 * var(--gap-inner) / 2);
+    }
+
+    .card-why {
+      border-left: 3px solid var(--bq-border);
+      padding-left: 20px;
+      margin: var(--gap-inner) 0;
+      font-family: 'Noto Serif', Georgia, serif;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .card-source {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .card-source:hover { color: var(--text); }
+
+    .card-divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin-top: var(--gap-card);
+    }
+
+    .site-footer {
+      padding: 40px 0 56px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .footer-rule {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    @media (min-width: 768px) {
+      :root { --px: 32px; }
+      body { font-size: 20px; }
+      .site-date { font-size: 88px; }
+      .card-title { font-size: 36px; }
+      .card-lede { font-size: 20px; }
+      .card-body { font-size: 20px; }
+      .card-why { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="site-header">
+    <p class="site-label">AI-Digest</p>
+    <h1 class="site-date">19 АПРЕЛЯ / ЧЕТВЕРГ</h1>
+    <hr class="header-rule">
+  </header>
+
+  <main class="cards">
+
+    <article class="card" id="card-1">
+      <p class="card-tag">МОДЕЛИ</p>
+      <h2 class="card-title">Claude Opus 4.7 уходит в tool-first режим</h2>
+      <p class="card-lede">Simon Willison выложил построчный разбор нового системного промпта Anthropic и показал, что Claude 4.7 перестал быть вежливым собеседником и стал агентом, который сначала тянется к инструментам.</p>
+      <p class="card-body">В changelog, опубликованном самой Anthropic, видно главное изменение операционной логики: модель теперь сильнее предпочитает закрывать неопределённость через tool use, а не задавать встречные вопросы. В перечне встроенных возможностей появились Claude in Chrome, Claude in Excel и Claude in Powerpoint — рабочая среда ассистента расширилась от чата до офисного стека.</p>
+      <p class="card-body">Параллельно усилены инструкции по краткости ответов, доведению задач до результата и аккуратной работе с чувствительными темами. Это не очередной prompt leak, а сигнал: длинные рабочие цепочки, браузерная автоматизация и сборка составных deliverables теперь заложены в базовое поведение. Старые guardrails, написанные под более пассивного 4.6, придётся пересматривать.</p>
+      <blockquote class="card-why">Если вы строите архитектурный ассистент поверх Claude — теперь он может быть не чатом, а слоем оркестрации над ТЗ, референсами, расчётами и презентацией концепции. Это меняет не модель промпта, а роль ассистента в вашем воркфлоу.</blockquote>
+      <a class="card-source" href="https://simonwillison.net/2026/Apr/18/opus-system-prompt/" target="_blank" rel="noopener">simonwillison.net</a>
+    </article>
+    <hr class="card-divider">
+
+    <article class="card" id="card-2">
+      <p class="card-tag">ИНСТРУМЕНТЫ</p>
+      <h2 class="card-title">Silicon Valley считает цену хаоса в агентных пайплайнах</h2>
+      <p class="card-lede">CNBC собрал жалобы команд, которые переводят AI-агентов из демо в продакшн: лишние tool calls, неуправляемый расход токенов, хрупкие многошаговые сценарии и непредсказуемые параллельные цепочки.</p>
+      <p class="card-body">Материал фиксирует более зрелую стадию рынка. Компании перестали восхищаться wow-эффектом и начали считать стоимость владения, latency, observability и failure modes. Отладка агентных систем оказалась отдельной инженерной дисциплиной, а не расширением привычной backend-работы.</p>
+      <p class="card-body">Конкурентное преимущество смещается: вместо «у нас есть агент» ценится «наш агент измерим, ограничен по бюджету, хорошо логируется и безопасно деградирует». Value создаёт не модель, а качество orchestration, памяти, retries, tool contracts и мониторинга. Для небольших прикладных продуктов это критично — они не могут позволить себе дорогой хаос в проде.</p>
+      <blockquote class="card-why">Если ваш pre-design tool должен сам собирать бриф, анализировать участок, вытягивать нормативы и готовить концепт-пакет — закладывайте бюджет токенов, логи и контракты инструментов с первого дня. Иначе агент разорит вас раньше, чем научится помогать.</blockquote>
+      <a class="card-source" href="https://www.cnbc.com/" target="_blank" rel="noopener">cnbc.com</a>
+    </article>
+    <hr class="card-divider">
+
+    <article class="card" id="card-3">
+      <p class="card-tag">ИНДУСТРИЯ</p>
+      <h2 class="card-title">Google обсуждает с Marvell собственный AI-чип</h2>
+      <p class="card-lede">По данным The Information, которые ретранслировал Reuters, Google ведёт переговоры с Marvell о разработке нового AI-чипа. Официального анонса нет, но сам факт переговоров продолжает линию на вертикальную интеграцию вычислений.</p>
+      <p class="card-body">Гиперскейлеры один за другим уходят от универсальных GPU-поставщиков к собственным акселераторам. Это увеличивает фрагментацию AI-инфраструктуры и поднимает барьер входа для тех, кто не контролирует compute и software stack одновременно. Сильнейшие платформы получают преимущество по цене и доступности inference и training.</p>
+      <p class="card-body">Для прикладных продуктов это не новость про железо, а прогноз по цене API, стабильности квот и скорости появления новых capability tiers. Выбор, на каком облаке и под какую модельную линейку строиться, становится стратегическим, а не техническим.</p>
+      <blockquote class="card-why">Если вы проектируете инструмент для архитектурного воркфлоу — OCR нормативов, генерация концептов, speech, агентные функции — учитывайте, что качество, цена и latency этих сервисов будут всё сильнее расходиться между платформами. Себестоимость цифрового продукта теперь зависит от compute politics.</blockquote>
+      <a class="card-source" href="https://www.reuters.com/" target="_blank" rel="noopener">reuters.com</a>
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-rule">
+      ━━━<br>
+      Сгенерировано Claude Opus 4.7 · AI-Digest pipeline · 2026-04-19
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>
