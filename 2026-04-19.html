@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI-Digest · 2026-04-19</title>
+  <title>AI-Digest &middot; 2026-04-19</title>
+  <link rel="icon" type="image/png" sizes="1024x1024" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="favicon-512.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Inter:wght@400;500&display=swap">
@@ -39,11 +42,7 @@
       padding: 0 var(--px);
     }
 
-    /* ── HERO ── */
-    .hero {
-      padding-top: 56px;
-      padding-bottom: 0;
-    }
+    .hero { padding-top: 56px; padding-bottom: 0; }
 
     .hero-kicker {
       font-family: 'Unbounded', sans-serif;
@@ -76,10 +75,7 @@
       margin-bottom: 28px;
     }
 
-    .hero-rule {
-      border: none;
-      border-top: 1px solid var(--rule);
-    }
+    .hero-rule { border: none; border-top: 1px solid var(--rule); }
 
     .hero-meta {
       font-family: 'Unbounded', sans-serif;
@@ -92,11 +88,7 @@
       margin-bottom: 0;
     }
 
-    /* ── LEDE ── */
-    .today-lede {
-      padding-top: 48px;
-      padding-bottom: 64px;
-    }
+    .today-lede { padding-top: 48px; padding-bottom: 64px; }
 
     .today-lede p {
       font-family: 'Inter', sans-serif;
@@ -106,20 +98,11 @@
       color: var(--text);
     }
 
-    /* ── CARDS ── */
-    .cards {
-      padding-bottom: 96px;
-    }
+    .cards { padding-bottom: 96px; }
 
-    .card-rule {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin-bottom: 28px;
-    }
+    .card-rule { border: none; border-top: 1px solid var(--rule); margin-bottom: 28px; }
 
-    .card {
-      padding-bottom: 80px;
-    }
+    .card { padding-bottom: 80px; }
 
     .card-kicker {
       font-family: 'Unbounded', sans-serif;
@@ -182,11 +165,8 @@
       text-decoration: none;
     }
 
-    .card-source:hover {
-      color: var(--text);
-    }
+    .card-source:hover { color: var(--text); }
 
-    /* ── FOOTER ── */
     .site-footer {
       border-top: 1px solid var(--rule);
       padding-top: 32px;
@@ -215,103 +195,108 @@
       text-align: center;
     }
 
-    /* ── DESKTOP ── */
     @media (min-width: 768px) {
-      :root {
-        --px: 40px;
-      }
-
-      .hero {
-        padding-top: 80px;
-      }
-
-      .hero-kicker {
-        font-size: 13px;
-      }
-
-      .hero-meta {
-        font-size: 13px;
-      }
-
-      .card-kicker {
-        font-size: 13px;
-      }
-
-      .card-body {
-        font-size: 20px;
-      }
-
-      .card-why {
-        font-size: 20px;
-      }
+      :root { --px: 40px; }
+      .hero { padding-top: 80px; }
+      .hero-kicker { font-size: 13px; }
+      .hero-meta { font-size: 13px; }
+      .card-kicker { font-size: 13px; }
+      .card-body { font-size: 20px; }
+      .card-why { font-size: 20px; }
     }
   </style>
-  <link rel="icon" type="image/png" sizes="1024x1024" href="favicon.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
-  <link rel="apple-touch-icon" sizes="512x512" href="favicon-512.png">
 </head>
 <body>
 
 <div class="container">
 
-  <!-- HERO -->
   <header class="hero">
-    <p class="hero-kicker">AI-Digest · Выпуск 109 · 19.04.26</p>
+    <p class="hero-kicker">AI-Digest &middot; Выпуск 109 &middot; 19.04.26</p>
     <span class="hero-date-number">19</span>
-    <span class="hero-date-month">Апреля</span>
+    <span class="hero-date-month">АПРЕЛЯ</span>
     <hr class="hero-rule">
-    <p class="hero-meta">Четверг · 3 материала</p>
+    <p class="hero-meta">ВОСКРЕСЕНЬЕ &middot; 7 материалов</p>
   </header>
 
-  <!-- TODAY'S LEDE -->
   <section class="today-lede">
-    <p>Anthropic переписала операционную логику Opus 4.7 — агент теперь сам тянется к инструментам вместо встречных вопросов. Silicon Valley считает реальную стоимость агентных систем и обнаруживает хаос там, где обещали автоматизацию. Google торгуется с Marvell за собственный AI-чип — гонка вертикальной интеграции набирает обороты.</p>
+    <p>Claude Opus 4.7 сдвигается в tool-first режим и проектирует новые failure modes для агентов. Vercel подтвердила security-инцидент через сторонний AI-инструмент, подключённый по OAuth. Оксфордское исследование показало, что в реальном диалоге точность моделей падает с 94.9% до 34.5% — прямой вызов для дизайна брифинг-интерфейсов.</p>
   </section>
 
-  <!-- CARDS -->
   <main class="cards">
-
-    <!-- CARD 1 -->
-    <hr class="card-rule">
-    <article class="card" id="card-1">
-      <p class="card-kicker">01 · Модели</p>
-      <h2 class="card-title">Opus 4.7 уходит в tool-first режим</h2>
-      <p class="card-lede">Anthropic опубликовала changelog системного промпта Claude Opus 4.7 — Simon Willison разобрал изменения: модель стала агрессивнее использовать инструменты и заметно реже задавать уточняющие вопросы.</p>
-      <p class="card-body">В новом системном промпте зафиксированы три ключевых сдвига: приоритет tool use над переспрашиванием пользователя, появление встроенных возможностей Claude in Chrome, Claude in Excel и Claude in PowerPoint, а также усиленные инструкции по краткости и самостоятельному завершению задач. Параллельно ужесточена работа с чувствительными темами.</p>
-      <p class="card-body">Это не «очередной prompt leak» — это изменение операционной логики ассистента. Для продакшн-агентов сигнал прямой: Claude 4.7 будет охотнее закрывать двусмысленности через tool use и лучше вести длинные рабочие цепочки. Но это же означает, что guardrails под пассивный 4.6 нужно пересматривать.</p>
-      <blockquote class="card-why">Если собираете агентный пайплайн — теперь Claude сам потянется к браузеру, таблицам и слайдам. Слой orchestration становится менее директивным; зато возрастает ценность чётких tool contracts и явных ограничений на scope.</blockquote>
-      <a class="card-source" href="https://simonwillison.net/2026/Apr/18/opus-system-prompt/" target="_blank" rel="noopener">Источник → Simon Willison, 18.04</a>
-    </article>
-
-    <!-- CARD 2 -->
-    <hr class="card-rule">
-    <article class="card" id="card-2">
-      <p class="card-kicker">02 · Инструменты</p>
-      <h2 class="card-title">Агентный хаос: реальная цена автоматизации</h2>
-      <p class="card-lede">CNBC фиксирует системные издержки массового внедрения AI-агентов: перерасход токенов, непредсказуемые многошаговые цепочки и сложность отладки параллельных процессов.</p>
-      <p class="card-body">На фоне повсеместного хайпа вокруг агентов компании переходят от демо к реальной эксплуатации — и начинают считать: стоимость владения, latency, observability, failure modes. Результат предсказуемый: обещанная автоматизация требует серьёзной инфраструктуры под собой.</p>
-      <p class="card-body">Рынок разворачивается: конкурентное преимущество смещается с «у нас есть агент» к «наш агент измерим, ограничен по стоимости и безопасно деградирует». Иными словами, ценность теперь создаёт не модель сама по себе, а качество orchestration, memory, retries и мониторинга.</p>
-      <blockquote class="card-why">Для любого прикладного AI-продукта это не абстракция — это checklist. Если агент помогает собирать бриф или анализировать участок, главный риск уже не в «умности модели», а в стоимости и надёжности агентной связки на каждом шаге.</blockquote>
-      <a class="card-source" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOZ2Y2WlhoQU9jRURWalo2cWFFQWs3NXUyM1ZWVElsNGN1aGpHU21IeUMxdnZZYXdIV20wN3NGelNYOGg2T3hNMzYyZ2Q4Y3g2R2F0Qy1kSDZtaDNuYzFncnk0d21OWVl4MnJQcGozNWNJamNVaE1MR0lhaUJvSFFSTk5RQV9SAYoBQVVfeXFMTXBPN0dlVm1zTlZnT0VrWWNMVTNyc1RjRW9nTVJicjJiczQzRllMc1h5Z1B5cDA0czhkSjAweklxZnFZN1QwSkFhWUpGcDFHNlRNZzg0UFFNeG9sRzJIaWltVE1GWUN3SlBxenVGeWNuV3NKTEMwWkYzekV0Y1ptNHViYjU5OUJtMGpR?oc=5" target="_blank" rel="noopener">Источник → CNBC, 19.04</a>
-    </article>
-
-    <!-- CARD 3 -->
-    <hr class="card-rule">
-    <article class="card" id="card-3">
-      <p class="card-kicker">03 · Индустрия</p>
-      <h2 class="card-title">Google и Marvell: ставка на свой чип</h2>
-      <p class="card-lede">Reuters сообщает о переговорах Google с Marvell по созданию нового AI-чипа — очередной шаг в стратегии платформ строить собственный compute-стек вместо зависимости от универсальных GPU.</p>
-      <p class="card-body">Даже без официального анонса сам факт переговоров говорит о продолжении гонки вертикальной интеграции. Крупные платформы последовательно уходят от универсальных GPU к кастомным accelerators — это даёт преимущество по цене и доступности inference, но одновременно создаёт фрагментацию AI-инфраструктуры.</p>
-      <p class="card-body">Для прикладных продуктов последствия конкретные: качество, цена и latency AI-сервисов будут сильнее расходиться между облаками. Выбор платформы для API-доступа к моделям перестаёт быть технической мелочью — это стратегическое решение с долгосрочными последствиями для экономики продукта.</p>
-      <blockquote class="card-why">Архитектуру AI-продукта теперь нужно закладывать с оглядкой на compute politics: от того, на чьём облаке работает ваш инструмент, зависит себестоимость генерации, стабильность квот и появление новых capability tiers.</blockquote>
-      <a class="card-source" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxOdWxnVXdLUWNJdk5fa1hpOVJUM2Rya25tcGYyUjE1NWN3T3VCcWU2M09jdmpqOUl1OUkyaXdna0ZIRnFSZm1NazdpQkkxSXVvN2ExSXVoQ3ZMenREUzRxMkNuWXRpR3hTek01Q3FYTFY2MUI1OWJpTi1YeDZIUHh1Xy1jZzZ0RW9xMzZudzZNS2EtSFEydWVoaVhzelVWc3hYNXRXRUdzNnhGWFpUMHVNZ1JJRm04MXpPNldj?oc=5" target="_blank" rel="noopener">Источник → Reuters, 19.04</a>
-    </article>
-
+<hr class="card-rule">
+<article class="card" id="card-1">
+  <p class="card-kicker">01 &middot; АГЕНТЫ</p>
+  <h2 class="card-title">Claude Opus 4.7 уходит в tool-first режим</h2>
+  <p class="card-lede">Simon Willison разобрал системный промпт свежего Opus 4.7 из официального Anthropic archive. Модель заметно сильнее предпочитает сразу искать недостающее через инструменты, а не переспрашивать пользователя.</p>
+  <p class="card-body">В промпте явно всплыли встроенные агенты для Chrome, Excel и PowerPoint, а формулировки вокруг completion pressure и лаконичности стали жёстче. Поведение ассистента теперь определяется не только весами модели, но и операционной политикой вокруг неё.</p>
+  <p class="card-body">Для команд, строящих агентные пайплайны, это важный сдвиг: новые failure modes и новые возможности появляются уже на уровне prompt policy, tool discovery и implicit orchestration, а не только на уровне релиза модели.</p>
+  <blockquote class="card-why">Если вы строите pre-design tool или presentation-ассистента — теперь проектировать надо под инициативного агента, открывающего браузер и таблицы сам, а не под чат-ответчика.</blockquote>
+  <a class="card-source" href="https://simonwillison.net/2026/Apr/18/opus-system-prompt/" target="_blank" rel="noopener">Источник &rarr; Simon Willison, 18.04</a>
+</article>
+<hr class="card-rule">
+<article class="card" id="card-2">
+  <p class="card-kicker">02 &middot; ИНСТРУМЕНТЫ РАЗРАБОТКИ</p>
+  <h2 class="card-title">Vercel: взлом через сторонний AI-инструмент</h2>
+  <p class="card-lede">Vercel подтвердила несанкционированный доступ к части внутренних систем и связала инцидент с компрометацией небольшого стороннего AI-инструмента через Google Workspace OAuth.</p>
+  <p class="card-body">Затронута ограниченная подгруппа клиентов, сервис продолжает работать, но компания просит срочно проверить activity log и перевыпустить все чувствительные environment variables, если они не были помечены как sensitive.</p>
+  <p class="card-body">Важнее самой утечки то, откуда пришёл компромисс — не через ядро платформы, а через внешний AI-инструмент с корпоративной идентификацией. Следующий класс рисков явно смещается на слой интеграций, OAuth-приложений и вспомогательных AI-сервисов.</p>
+  <blockquote class="card-why">Если вы строите свои AI-плагины для SketchUp, Rhino или презентационного пайплайна — модель доверия обязана включать аудит OAuth-доступов, изоляцию секретов и минимизацию прав у внешних сервисов.</blockquote>
+  <a class="card-source" href="https://vercel.com/kb/bulletin/vercel-april-2026-security-incident" target="_blank" rel="noopener">Источник &rarr; Vercel, 19.04</a>
+</article>
+<hr class="card-rule">
+<article class="card" id="card-3">
+  <p class="card-kicker">03 &middot; ИССЛЕДОВАНИЕ</p>
+  <h2 class="card-title">Оксфорд: 94.9% падают до 34.5% в живом диалоге</h2>
+  <p class="card-lede">BBC разобрала свежую работу Oxford Reasoning with Machines Lab. В изолированном тесте модели почти идеальны, но когда обычные люди общаются с ними по медицинским сценариям, точность резко проседает.</p>
+  <p class="card-body">Сами модели показывали около 94.9% точности на полном наборе данных, но люди, использующие те же модели в формате реального диалога, опускались примерно до 34.5%. Причина — неполная постановка вопроса, постепенная подача симптомов и доверие к уверенно звучащим, но не до конца проверенным ответам.</p>
+  <p class="card-body">Переход от benchmark capability к public deployment упирается не только в качество модели, но и в дизайн интерфейса, prompting scaffolds, escalation logic. Особенно там, где ошибка не просто портит UX, а ведёт к неправильному действию.</p>
+  <blockquote class="card-why">Если вы строите брифинг-ассистента или pre-design tool — нужен интерфейс, который структурирует ввод, вытягивает пропущенные параметры и явно маркирует неопределённость. Это core, а не косметика.</blockquote>
+  <a class="card-source" href="https://www.bbc.com/news/articles/clyepyy82kxo" target="_blank" rel="noopener">Источник &rarr; BBC, 18.04</a>
+</article>
+<hr class="card-rule">
+<article class="card" id="card-4">
+  <p class="card-kicker">04 &middot; АГЕНТЫ</p>
+  <h2 class="card-title">OpenAI Agents SDK 0.14.2: sandbox в production</h2>
+  <p class="card-lede">В релизе 0.14.2 OpenAI Agents SDK добавил дополнительные path grants для sandbox, улучшил session и tool metadata слой и продолжает стабилизировать долгоживущие agent workflows.</p>
+  <p class="card-body">По составу это не headline-патч, а важный operational update: sandbox extra path grants, сохранение metadata происхождения инструментов, session backend для MongoDB, исправления run-loop и compaction behaviour.</p>
+  <p class="card-body">OpenAI уплотняет не демо-часть SDK, а именно слой для длинных рабочих прогонов, tracing и production-hardening. Репозиторий попал в ежедневный GitHub trending — подтверждение, что orchestration frameworks становятся отдельным классом инфраструктуры.</p>
+  <blockquote class="card-why">Если вы планируете оркестратор вокруг SketchUp, Rhino, GIS или document analysis — где агент читает проектные файлы и проходит длинные цепочки — такие апдейты уже имеют практическое значение.</blockquote>
+  <a class="card-source" href="https://github.com/openai/openai-agents-python/releases" target="_blank" rel="noopener">Источник &rarr; GitHub Releases, 18.04</a>
+</article>
+<hr class="card-rule">
+<article class="card" id="card-5">
+  <p class="card-kicker">05 &middot; РЕЛИЗ ПРОДУКТА</p>
+  <h2 class="card-title">Tesla robotaxi: Даллас и Хьюстон в эксплуатации</h2>
+  <p class="card-lede">Tesla объявила о запуске robotaxi ещё в двух городах Техаса, расширяя сервис после Остина, хотя масштаб нового развёртывания пока выглядит ограниченным.</p>
+  <p class="card-body">Даже если в Далласе и Хьюстоне задействовано немного машин, это инфраструктурно-продуктовый маркер: Tesla переводит автономные поездки из режима демонстрации в режим повторяемого сервисного развёртывания по городам.</p>
+  <p class="card-body">Фон не безоблачный — TechCrunch напоминает о зафиксированных авариях в Остине и скромном реальном масштабе сети. Сравнение теперь идёт не между vision decks, а между operating models: coverage, safety case, fleet economics, юридическая инфраструктура.</p>
+  <blockquote class="card-why">Если вы смотрите вперёд на mixed-use, parking demand и curbside логистику — это ранний индикатор того, что mobility assumptions в городских сценариях могут меняться быстрее, чем кажется.</blockquote>
+  <a class="card-source" href="https://techcrunch.com/2026/04/18/tesla-brings-its-robotaxi-service-to-dallas-and-houston/" target="_blank" rel="noopener">Источник &rarr; TechCrunch, 18.04</a>
+</article>
+<hr class="card-rule">
+<article class="card" id="card-6">
+  <p class="card-kicker">06 &middot; ИНФРАСТРУКТУРА GPU</p>
+  <h2 class="card-title">Дефицит памяти тянется до 2027 года</h2>
+  <p class="card-lede">The Verge со ссылкой на Nikkei Asia и Counterpoint пишет: производители памяти к концу 2027 года смогут покрыть лишь около 60% спроса, поскольку мощности уходят в AI-ориентированную память HBM.</p>
+  <p class="card-body">Samsung, SK Hynix и Micron приоритизируют HBM для AI-инфраструктуры, а не универсальную DRAM для массовой электроники. Дефицит давит не только на AI-датацентры, но и на весь downstream — ноутбуки, рабочие станции, гарнитуры, handheld-устройства.</p>
+  <p class="card-body">Для разработчиков это означает более дорогие локальные машины и менее предсказуемую экономику edge и workstation-сценариев. Для команд, собирающих AI-продукты, это ещё один аргумент в пользу careful capacity planning.</p>
+  <blockquote class="card-why">Если вы планируете новые рендеринговые или генеративные пайплайны — дорожают рабочие станции для визуализации и растёт давление на облачные AI-сервисы. Compute economics в ближайшие годы будет хуже, чем хотелось бы.</blockquote>
+  <a class="card-source" href="https://www.theverge.com/ai-artificial-intelligence/914672/the-ram-shortage-could-last-years" target="_blank" rel="noopener">Источник &rarr; The Verge, 18.04</a>
+</article>
+<hr class="card-rule">
+<article class="card" id="card-7">
+  <p class="card-kicker">07 &middot; ТРЕНДЫ ИНДУСТРИИ</p>
+  <h2 class="card-title">AI разгоняет новую волну мобильных приложений</h2>
+  <p class="card-lede">По данным TechCrunch и Appfigures, число новых приложений в первом квартале 2026 года заметно выросло, а одним из главных драйверов называют AI-инструменты, которые упростили сборку мобильных продуктов.</p>
+  <p class="card-body">Популярная гипотеза о том, что AI-чаты съедят отдельные приложения, не подтверждается. AI резко снижает порог входа в разработку и ускоряет следующий цикл app economy — утилиты, productivity, lifestyle, мобильные эксперименты.</p>
+  <p class="card-body">Вторая сторона роста — мусор и мошеннические приложения. Чем дешевле производить софт, тем выше нагрузка на модерацию и trust &amp; safety. Рынок движется к конфликту между скоростью выпуска и качеством экосистемы.</p>
+  <blockquote class="card-why">Если вы думаете о нишевых мобильных продуктах вокруг @architects_AI — от полевых survey-утилит до AI-помощников для брифа и клиентских демо — сейчас хорошее окно. Но trust layer становится не менее важен, чем AI-функция.</blockquote>
+  <a class="card-source" href="https://techcrunch.com/2026/04/18/the-app-store-is-booming-again-and-ai-may-be-why/" target="_blank" rel="noopener">Источник &rarr; TechCrunch, 18.04</a>
+</article>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
-    <p class="footer-meta">AI-Digest · Claude Opus 4.7 × OpenClaw · 2026</p>
+    <p class="footer-meta">AI-Digest &middot; Claude Opus 4.7 &times; OpenClaw &middot; 2026</p>
     <p class="footer-colophon">AI&#x2014;Digest</p>
   </footer>
 
