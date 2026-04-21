@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Простыми Словами · Неделя 17 · 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Inter:wght@400;500&display=swap">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-style: normal !important;
+    }
+
+    :root {
+      --bg:    #efece4;
+      --text:  #111;
+      --muted: #6e6a64;
+      --rule:  #111;
+      --max-w: 720px;
+      --px:    20px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 18px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--px);
+    }
+
+    /* HERO */
+    .hero {
+      padding-top: 56px;
+      padding-bottom: 0;
+    }
+
+    .hero-kicker {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .hero-week-number {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 800;
+      font-size: clamp(80px, 16vw, 180px);
+      letter-spacing: -0.03em;
+      line-height: 0.9;
+      color: var(--text);
+      display: block;
+    }
+
+    .hero-week-label {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 800;
+      font-size: clamp(24px, 4vw, 40px);
+      letter-spacing: -0.02em;
+      line-height: 1.0;
+      color: var(--text);
+      display: block;
+      margin-bottom: 28px;
+    }
+
+    .hero-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+    }
+
+    .hero-meta {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 14px;
+      margin-bottom: 0;
+    }
+
+    /* LEDE */
+    .today-lede {
+      padding-top: 48px;
+      padding-bottom: 64px;
+    }
+
+    .today-lede p {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: clamp(20px, 2.8vw, 26px);
+      line-height: 1.45;
+      color: var(--text);
+    }
+
+    /* GROUPS */
+    .groups {
+      padding-bottom: 96px;
+    }
+
+    .group {
+      margin-bottom: 0;
+    }
+
+    .group-title {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 20px;
+      margin-top: 64px;
+    }
+
+    .group-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin-bottom: 40px;
+    }
+
+    /* CARDS */
+    .card-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin-bottom: 28px;
+    }
+
+    .card {
+      padding-bottom: 72px;
+    }
+
+    .card-kicker {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 800;
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 28px;
+    }
+
+    .card-lede {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: clamp(20px, 2.6vw, 24px);
+      line-height: 1.4;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    .card-body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .card-why {
+      border-left: 3px solid var(--rule);
+      padding-left: 28px;
+      margin: 28px 0;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .card-action {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .card-source {
+      display: inline-block;
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .card-source:hover {
+      color: var(--text);
+    }
+
+    /* FOOTER */
+    .site-footer {
+      border-top: 1px solid var(--rule);
+      padding-top: 32px;
+      padding-bottom: 72px;
+    }
+
+    .footer-meta {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .footer-colophon {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 800;
+      font-size: clamp(40px, 8vw, 80px);
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-align: center;
+    }
+
+    /* DESKTOP */
+    @media (min-width: 768px) {
+      :root {
+        --px: 40px;
+      }
+
+      .hero {
+        padding-top: 80px;
+      }
+
+      .hero-kicker {
+        font-size: 13px;
+      }
+
+      .hero-meta {
+        font-size: 13px;
+      }
+
+      .card-kicker {
+        font-size: 13px;
+      }
+
+      .group-title {
+        font-size: 28px;
+      }
+
+      .card-body {
+        font-size: 20px;
+      }
+
+      .card-why {
+        font-size: 20px;
+      }
+
+      .card-action {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <header class="hero">
+    <p class="hero-kicker">AI Простыми Словами · Выпуск 17 · 14–20 апреля 2026</p>
+    <span class="hero-week-number">17</span>
+    <span class="hero-week-label">НЕДЕЛЯ</span>
+    <hr class="hero-rule">
+    <p class="hero-meta">СУББОТА · 7 материалов</p>
+  </header>
+
+  <!-- LEDE -->
+  <section class="today-lede">
+    <p>На этой неделе искусственный интеллект всё больше врастает в обычную жизнь. Он помогает искать в интернете, делать покупки и даже защищать нас от мошенников — хотя сам же становится их инструментом. Роботы учатся новым вещам сами по себе, а дети могут создавать игры, просто рассказывая, что им нравится.</p>
+  </section>
+
+  <!-- GROUPS -->
+  <main class="groups">
+
+    <!-- ГРУППА: ГЛАВНОЕ НЕДЕЛИ -->
+    <section class="group">
+      <h2 class="group-title">Главное недели</h2>
+      <hr class="group-rule">
+
+      <article class="card" id="card-1">
+        <p class="card-kicker">01 · Главное</p>
+        <h3 class="card-title">Google сделал поиск в интернете умнее — теперь с ИИ рядом</h3>
+        <p class="card-lede">Когда вы ищете что-то в Google и переходите на сайт, рядом теперь открывается ИИ-помощник. Он читает ту же страницу и отвечает на ваши вопросы по ней — не надо ничего копировать или переключаться.</p>
+        <p class="card-body">Раньше приходилось держать открытыми два окна: одно — с сайтом, другое — с ChatGPT или другим помощником, куда нужно было вставлять текст и ждать ответа. Теперь Google совместил это в одном месте.</p>
+        <p class="card-body">Например, вы читаете статью о лекарстве и хотите уточнить, можно ли его принимать вместе с другим. Раньше надо было искать это отдельно, теперь можно просто спросить рядом — помощник видит, что вы читаете, и отвечает конкретно по этой информации.</p>
+        <p class="card-body">Пока функция работает в США, но Google постепенно расширяет её на другие страны.</p>
+        <blockquote class="card-why">Что это значит: поиск в интернете становится не просто списком ссылок, а разговором. Это удобно, когда нужно разобраться в чём-то незнакомом — задать уточняющий вопрос прямо по тексту, который читаешь.</blockquote>
+        <a class="card-source" href="https://techcrunch.com/2026/04/16/google-now-lets-you-explore-the-web-side-by-side-with-ai-mode/" target="_blank" rel="noopener">Источник → TechCrunch, 16.04</a>
+      </article>
+
+    </section>
+
+    <!-- ГРУППА: БЕЗОПАСНОСТЬ -->
+    <section class="group">
+      <h2 class="group-title">Безопасность и мошенничество</h2>
+      <hr class="group-rule">
+
+      <article class="card" id="card-2">
+        <p class="card-kicker">02 · Безопасность</p>
+        <h3 class="card-title">Мошенники стали использовать ИИ — атак стало больше и они хитрее</h3>
+        <p class="card-lede">Большое международное исследование выяснило: три из четырёх компаний за последние два года столкнулись с мошенниками, которые используют искусственный интеллект. Обычных людей это тоже касается.</p>
+        <p class="card-body">Раньше мошеннический звонок можно было распознать по неловкому акценту или неуверенному голосу. Теперь ИИ умеет копировать чужой голос. Достаточно нескольких секунд записи голоса в интернете — и программа сделает звонок, в котором «ваш сын» или «ваш банковский сотрудник» будет звучать совсем убедительно.</p>
+        <p class="card-body">Кроме голосовых подделок, злоумышленники используют ИИ для написания более грамотных и убедительных писем с просьбой перейти по ссылке или ввести данные. Раньше такие письма легко выдавали ошибки и странный стиль — теперь их сложнее отличить от настоящих.</p>
+        <blockquote class="card-why">Что это значит: если вам позвонят с незнакомого номера и скажут что-то срочное — например, попросят перевести деньги или сообщить код из смс — лучше положить трубку и перезвонить самому по официальному номеру. Голос в телефоне больше не гарантия того, кто на самом деле звонит.</blockquote>
+        <p class="card-action">Что делать: при любом подозрительном звонке с просьбой действовать быстро — кладите трубку и сами набирайте знакомый номер того, кто якобы звонил.</p>
+        <a class="card-source" href="https://habr.com/ru/companies/bothub/news/1025928/" target="_blank" rel="noopener">Источник → Habr, 20.04</a>
+      </article>
+
+      <hr class="card-rule">
+      <article class="card" id="card-3">
+        <p class="card-kicker">03 · Безопасность</p>
+        <h3 class="card-title">Приложение для знакомств начнёт проверять, что вы — настоящий человек</h3>
+        <p class="card-lede">Tinder объявил о новой системе проверки: пользователи смогут подтвердить, что они реальные люди, а не компьютерные программы. Рядом с такими профилями появится специальная отметка.</p>
+        <p class="card-body">Это связано с тем, что в интернете стало всё больше так называемых «ботов» — автоматических программ, которые притворяются живыми людьми. В приложениях для знакомств их особенно много: они пишут сообщения, завязывают общение и постепенно ведут к мошенничеству.</p>
+        <p class="card-body">Технология называется Project World и создана компанией Сэма Альтмана — того же человека, который основал ChatGPT. Чтобы получить отметку, нужно пройти проверку личности: сделать селфи или пройти сканирование. Данные при этом не сохраняются — только подтверждение факта, что человек реальный.</p>
+        <p class="card-body">Похожую защиту скоро получат и другие сервисы — например, видеозвонки в Zoom и электронные подписи.</p>
+        <blockquote class="card-why">Что это значит: постепенно в интернете появится способ отличать настоящих людей от программ. Это важно не только для знакомств — такая проверка поможет защититься от мошеннических писем и звонков, которые сейчас делают автоматические программы.</blockquote>
+        <a class="card-source" href="https://techcrunch.com/2026/04/17/sam-altmans-project-world-looks-to-scale-its-human-verification-empire-first-stop-tinder/" target="_blank" rel="noopener">Источник → TechCrunch, 17.04</a>
+      </article>
+
+    </section>
+
+    <!-- ГРУППА: ОБЫЧНАЯ ЖИЗНЬ -->
+    <section class="group">
+      <h2 class="group-title">Обычная жизнь</h2>
+      <hr class="group-rule">
+
+      <article class="card" id="card-4">
+        <p class="card-kicker">04 · Транспорт</p>
+        <h3 class="card-title">Такси без водителя теперь работает ещё в двух американских городах</h3>
+        <p class="card-lede">Компания Tesla расширила сервис беспилотных такси — автомобилей, которые сами ездят по городу без человека за рулём. Теперь их можно вызвать в Далласе и Хьюстоне.</p>
+        <p class="card-body">Первый такой сервис Tesla запустила летом 2025 года в Остине, тоже в штате Техас. С января 2026 года машины начали ездить совсем без водителя — раньше сотрудник всё равно сидел на переднем сиденье. Сейчас в Далласе и Хьюстоне работает по одной машине, в Остине — сорок шесть.</p>
+        <p class="card-body">Это не фантастика — такие такси уже несколько лет работают и в других американских городах: компания Waymo (принадлежит Google) давно возит пассажиров в Сан-Франциско и Лос-Анджелесе без водителя. Tesla идёт тем же путём, только позже.</p>
+        <blockquote class="card-why">Что это значит: технология беспилотных автомобилей медленно, но уверенно переходит из разряда экспериментов в обычный городской транспорт. В России это пока далеко, но через несколько лет такие сервисы могут появиться и в крупных городах.</blockquote>
+        <a class="card-source" href="https://techcrunch.com/2026/04/18/tesla-brings-its-robotaxi-service-to-dallas-and-houston/" target="_blank" rel="noopener">Источник → TechCrunch, 18.04</a>
+      </article>
+
+      <hr class="card-rule">
+      <article class="card" id="card-5">
+        <p class="card-kicker">05 · Покупки</p>
+        <h3 class="card-title">Люди стали чаще просить ИИ помочь с покупками — и остались довольны</h3>
+        <p class="card-lede">Крупное исследование показало: за первые три месяца 2026 года количество людей, которые используют ИИ-помощников при онлайн-шопинге, выросло почти в пять раз. И большинство говорят, что им стало удобнее.</p>
+        <p class="card-body">Люди спрашивают у ИИ-помощников: «Какой пылесос лучше взять для квартиры с коврами?», «Есть ли скидка на это прямо сейчас?», «Чем отличаются эти два крема?». Помощник изучает ассортимент магазина и отвечает конкретно, а не выдаёт длинный список ссылок.</p>
+        <p class="card-body">Согласно исследованию компании Adobe, 39% покупателей уже пробовали такой подход, и 85% из них сказали, что покупать стало проще. Те, кто пользовался помощником, в среднем тратили больше времени на изучение товара — и реже возвращали купленное.</p>
+        <blockquote class="card-why">Что это значит: если вы ещё не пробовали просить у ChatGPT или похожей программы совета перед покупкой — стоит попробовать. Особенно когда выбираете что-то незнакомое или технически сложное: технику, лекарства, косметику.</blockquote>
+        <a class="card-source" href="https://techcrunch.com/2026/04/16/ai-traffic-to-us-retailers-rose-393-in-q1-and-its-boosting-their-revenue-too/" target="_blank" rel="noopener">Источник → TechCrunch, 16.04</a>
+      </article>
+
+    </section>
+
+    <!-- ГРУППА: УЧЁБА И ДЕТИ -->
+    <section class="group">
+      <h2 class="group-title">Учёба и дети</h2>
+      <hr class="group-rule">
+
+      <article class="card" id="card-6">
+        <p class="card-kicker">06 · Дети и творчество</p>
+        <h3 class="card-title">Дети могут создавать игры в Roblox, просто рассказывая, что хотят</h3>
+        <p class="card-lede">Популярная игровая платформа Roblox, где играют миллионы детей и подростков, добавила ИИ-помощника. Теперь можно описать словами, какую игру хочешь, — и помощник её создаст.</p>
+        <p class="card-body">Roblox — это платформа, где пользователи не только играют, но и придумывают свои игры. Раньше для этого нужно было учиться программировать — это долго и сложно. Теперь ребёнок может написать: «Хочу игру, где нужно собирать монеты в парке с фонтаном» — и помощник задаст пару уточняющих вопросов, а потом сделает эту игру сам.</p>
+        <p class="card-body">Ребёнок при этом остаётся автором — он принимает решения, что оставить, что изменить, — а ИИ выполняет техническую часть. Это похоже на то, как архитектор придумывает дом, а строители его строят.</p>
+        <blockquote class="card-why">Что это значит: дети получают возможность создавать, а не только потреблять — и для этого больше не нужно несколько лет учиться программированию. Если у вас есть внуки или дети, играющие в Roblox, — это хороший повод обсудить с ними, что они хотели бы придумать.</blockquote>
+        <a class="card-source" href="https://techcrunch.com/2026/04/16/robloxs-ai-assistant-gets-new-agentic-tools-to-plan-build-and-test-games/" target="_blank" rel="noopener">Источник → TechCrunch, 16.04</a>
+      </article>
+
+    </section>
+
+    <!-- ГРУППА: ОБЩЕСТВО И ЭТИКА -->
+    <section class="group">
+      <h2 class="group-title">Общество и этика</h2>
+      <hr class="group-rule">
+
+      <article class="card" id="card-7">
+        <p class="card-kicker">07 · Будущее</p>
+        <h3 class="card-title">Роботы научились догадываться, как делать незнакомые вещи</h3>
+        <p class="card-lede">Американская компания Physical Intelligence создала новый тип управления роботом: он может выполнять задачи, которым его никогда не учили, — соединяя то, что уже умеет, по-новому.</p>
+        <p class="card-body">Раньше роботов нужно было долго и подробно обучать каждому конкретному движению. Хочешь, чтобы робот приготовил кофе, — учи его именно кофе. Хочешь, чтобы сложил одежду, — учи отдельно. Новая система работает иначе: робот видит незнакомую задачу и сам догадывается, как её выполнить, используя уже известные навыки.</p>
+        <p class="card-body">В одном из экспериментов роботу дали аэрофритюрницу, которую он никогда раньше не видел. Он разобрался с ней самостоятельно после пары попыток и пустил готовить батат. Учёные честно признают: это пока исследование, а не готовый домашний помощник — попросить принести тосты с кухни он ещё не может.</p>
+        <blockquote class="card-why">Что это значит: роботы-помощники для дома — это, возможно, не такое далёкое будущее, как кажется. Сейчас они уже умеют складывать бельё и мыть посуду в лабораторных условиях. Когда именно они появятся в домах — пока неясно, но направление определилось.</blockquote>
+        <a class="card-source" href="https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/" target="_blank" rel="noopener">Источник → TechCrunch, 16.04</a>
+      </article>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p class="footer-meta">Выпуск 17 · суббота, 19 апреля 2026</p>
+    <p class="footer-colophon">AI Простыми Словами</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
